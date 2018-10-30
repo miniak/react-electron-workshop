@@ -1,5 +1,5 @@
 // electron
-import { remote } from 'electron';
+import { remote, clipboard, nativeImage } from 'electron';
 
 // node
 import * as fs from 'fs';
@@ -15,10 +15,49 @@ interface IGalleryItemProps {
 }
 
 class GalleryItem extends React.Component<IGalleryItemProps> {
+    constructor(props: IGalleryItemProps) {
+        super(props);
+
+        this._onContextMenu = this._onContextMenu.bind(this);
+    }
+
     public render() {
         return (
-            <img src={this._fileUrl} />
+            <img src={this._fileUrl} onContextMenu={this._onContextMenu} />
         );
+    }
+
+    private _onContextMenu(event: React.MouseEvent) {
+        event.preventDefault();
+        const window = remote.getCurrentWindow();
+
+        const menu = remote.Menu.buildFromTemplate([
+            {
+                label: 'Show in Folder',
+                click: () => {
+                    try {
+                        remote.shell.showItemInFolder(this.props.filePath);
+                    }
+                    catch (error) {
+                        console.error(error);
+                    }
+                }
+            },
+            {
+                label: 'Copy to Clipboard',
+                click: () => {
+                    try {
+                        const image = nativeImage.createFromPath(this.props.filePath);
+                        clipboard.writeImage(image);
+                    }
+                    catch (error) {
+                        console.error(error);
+                    }
+                }
+            }
+        ]);
+
+        menu.popup({ window });
     }
 
     private get _fileUrl() {
