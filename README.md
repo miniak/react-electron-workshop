@@ -9,7 +9,7 @@ To clone and run this repository, you'll need [Git](https://git-scm.com) and [No
 
 ```
 # Clone this repository
-git clone https://github.com/electron/react-electron-workshop
+git clone https://github.com/miniak/react-electron-workshop.git
 # Go into the repository
 cd react-electron-workshop
 # Install dependencies
