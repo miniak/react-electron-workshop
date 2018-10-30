@@ -54,11 +54,13 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Upgrade [index.tsx](src/renderer/index.tsx) with context menu and thumbnail optimizing
  * :bulb: Note the use of ```remote.Menu.buildFromTemplate``` electron menu api.
  
-### Packaging the app and creating an installer
+### Packaging the app
  * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
  * But there are packages (packages to do this)[https://github.com/electron-userland/electron-packager]: ```npm install -save-dev electron-packager```
  * Create the packaged app: ```node_modules\.bin\electron-packager.cmd ./```
  * :bulb: Review the created packaged app folder. Run the packaged app, note it no native menus.
+ 
+ ### Creating an installer on Windows
  * Install a package to [create an installer](https://github.com/felixrieseberg/electron-wix-msi): ```npm i --save-dev electron-wix-msi```
  * Install [wix toolset](http://wixtoolset.org/)
  * Add wix to the path  ```C:\Program Files (x86)\WiX Toolset v3.11\bin;```
