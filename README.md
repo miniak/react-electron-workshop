@@ -20,7 +20,7 @@ npm run build
 npm start
 ```
 
-## To develop
+## To make this app step by step
 
 For development we use [vscode](https://code.visualstudio.com/), [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [electron-fiddle](https://github.com/electron/fiddle).
 
@@ -83,3 +83,6 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Build the installer: ```node make-msi.js```
  * :bulb: Install and run
  
+ ### Tips
+  * Read the [security guide](https://electronjs.org/docs/tutorial/security) **IMPORTANT**
+  * We didn't cover [Native Node Modules](https://electronjs.org/docs/tutorial/using-native-node-modules). They provide full access to the native platform – for when electron does not have an api.
