@@ -22,6 +22,8 @@ npm start
 
 For development we use [vscode](https://code.visualstudio.com/), [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [electron-fiddle](https://github.com/electron/fiddle).
 
+### Creating hello world with react, typescript and electron
+
  * create empty folder: ```mkdir react-photo-viewer``` 
  * go into the folder: ```cd react-photo-viewer``` 
  * Initialize npm: ```npm init```
@@ -30,26 +32,31 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Install typescript: ```npm install --save-dev typescript @types/react @types/react-dom```
  * Create [.gitignore](.gitignore) (optional) 
  * Create [tsconfig.json](tsconfig.json)
- * Create src folder: '''mkdir src''' 
- * Create renderer folder: '''mkdir src/renderer''' 
+ * Create src folder: ```mkdir src```
+ * Create renderer folder: ```mkdir src/renderer```
  * In the src\renderer folder
  * Create [main.ts](src/renderer/main.ts)
  * Create [preload.ts](src/renderer/preload.ts)
  * Create [index.html](src/renderer/index.html)
  * Create [index.tsx](src/renderer/index.tsx) (hello world version)
- * Add build steps to: [package.json](package.json) and update main '''"main": "src/main.js",'''
- * Try to build: '''npm run build'''
- * Try to run: '''npm start'''
- * Talk about rp debugging
- * Talk about chrome://inspect  blah
- * Upgrade index.html to basic viewer (xxxx)
- * Create css (xxxx)
- * Talk about loading the path
- * npm install --save exif
- * Upgrade index.tsx to context menu and optimizing
- * Talk about menus 
- * Making an app by copying folders example (https://electronjs.org/docs/tutorial/application-distribution)
- * npm install -save-dev electron-packager
+ * Add build steps to: [package.json](package.json) and update main ```"main": "src/main.js",```
+ * Try to build: ```npm run build```
+ * Try to run: ```npm start```
+ * :bulb: Try to inspect and debug the render process using developer-tools: <kbd>control</kbd>+<kbd>shift</kbd>+<kbd>I</kbd>
+ * :bulb: Try to inspect and debug the main process using chrome://inspect in a seperate chrome instance.
+ 
+ ### Add photo viewing features
+ 
+ * Upgrade [index.tsx](src/renderer/index.tsx) with basic viewer
+ * Add [index.css](src/renderer/index.css) for styles
+ * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's
+ * Install exif module ```npm install --save exif```
+ * Upgrade [index.tsx](src/renderer/index.tsx) with context menu and thumbnail optimizing
+ * :bulb: Note the use of ```remote.Menu.buildFromTemplate``` electron menu api.
+ 
+### Packaging the app and creating an installer
+ * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
+ * But there are packages to do this: ```npm install -save-dev electron-packager```
  * node_modules\.bin\electron-packager.cmd ./
  * npm i --save-dev electron-wix-msi
  * Install wix
