@@ -4,8 +4,11 @@ import * as path from 'path';
 let mainWindow: BrowserWindow;
 app.once('ready', () => {
     mainWindow = new BrowserWindow({
+        width: 1000,
+        height: 700,
         webPreferences: {
-            preload: path.join(__dirname, 'renderer/preload.js')
+            preload: path.join(app.getAppPath(), 'src/renderer/preload.js'),
+            additionalArguments: ['--renderer-process-type=main-window']
         }
     });
     mainWindow.loadFile('src/renderer/index.html');

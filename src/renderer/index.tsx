@@ -54,6 +54,40 @@ class GalleryItem extends React.Component<IGalleryItemProps> {
                         console.error(error);
                     }
                 }
+            },
+            {
+                label: 'Show EXIF Information',
+                click: () => {
+                    const appPath = remote.app.getAppPath();
+
+                    let popupWindow = new remote.BrowserWindow({
+                        width: 800,
+                        height: 600,
+                        parent: window,
+                        modal: true,
+                        minimizable: false,
+                        maximizable: false,
+                        webPreferences: {
+                            preload: path.join(appPath, 'src/renderer/preload.js'),
+                            additionalArguments: ['--renderer-process-type=exif-info']
+                        }
+                    });
+
+                    const pageURL = url.format({
+                        protocol: 'file',
+                        pathname: path.join(appPath, 'src/renderer/popup.html'),
+                        query: {
+                            filePath: this.props.filePath
+                        }
+                    });
+
+                    console.log(pageURL);
+                    popupWindow.loadURL(pageURL);
+
+                    popupWindow.once('closed', () => {
+                        popupWindow = undefined;
+                    });
+                }
             }
         ]);
 
