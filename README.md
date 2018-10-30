@@ -33,11 +33,11 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Create src folder: '''mkdir src''' 
  * Create renderer folder: '''mkdir src/renderer''' 
  * In the src\renderer folder
- * Create (main.ts)[src/renderer/main.ts]
- * Create (preload.ts)[src/renderer/preload.ts]
- * Create (index.html)[src/renderer/index.html]
- * Create (index.tsx)[src/renderer/index.tsx] (hello world version)
- * Add build steps to: (package.json)[package.json] and update main '''"main": "src/main.js",'''
+ * Create [main.ts](src/renderer/main.ts)
+ * Create [preload.ts](src/renderer/preload.ts)
+ * Create [index.html](src/renderer/index.html)
+ * Create [index.tsx](src/renderer/index.tsx) (hello world version)
+ * Add build steps to: [package.json](package.json) and update main '''"main": "src/main.js",'''
  * Try to build: '''npm run build'''
  * Try to run: '''npm start'''
  * Talk about rp debugging
