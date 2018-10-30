@@ -56,7 +56,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  
 ### Packaging the app
  * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
- * But there are packages (packages to do this)[https://github.com/electron-userland/electron-packager]: ```npm install -save-dev electron-packager```
+ * But there are packages [packages to do this](https://github.com/electron-userland/electron-packager): ```npm install -save-dev electron-packager```
  * Create the packaged app: ```node_modules\.bin\electron-packager.cmd ./```
  * :bulb: Review the created packaged app folder. Run the packaged app, note it no native menus.
  
@@ -66,3 +66,5 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Add wix to the path  ```C:\Program Files (x86)\WiX Toolset v3.11\bin;```
  * Create (make-msi.js)[make-msi.js] with script to create an insaller
  * Build the installer: ```node make-msi.js```
+ * :bulb: Install and run
+ 
