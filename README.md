@@ -1,6 +1,6 @@
 # react-electron-workshop
 
-This repo contains a react electron sample app that we used for a workshop on building react desktop apps with electron. It is a simple app to view photos stored locally on your computer. We use [typescript]( https://www.typescriptlang.org/) because things normally work out better that way.
+This repo contains a [react](https://reactjs.org/) [electron](https://electronjs.org/) sample app that we used for a workshop on building react desktop apps with electron. It is a simple app to view photos stored locally on your computer. We use [typescript]( https://www.typescriptlang.org/) because things normally work out better that way.
 
 ## To Use
 To clone and run this repository, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
@@ -43,7 +43,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Try to build: ```npm run build```
  * Try to run: ```npm start```
  * :bulb: Try to inspect and debug the render process using developer-tools: <kbd>control</kbd>+<kbd>shift</kbd>+<kbd>I</kbd>
- * :bulb: Try to inspect and debug the main process using chrome://inspect in a seperate chrome instance.
+ * :bulb: Try to inspect and [debug the main process](https://electronjs.org/docs/tutorial/debugging-main-process) using chrome://inspect in a seperate chrome instance.
  
  ### Add photo viewing features
  
@@ -56,9 +56,11 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  
 ### Packaging the app and creating an installer
  * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
- * But there are packages to do this: ```npm install -save-dev electron-packager```
- * node_modules\.bin\electron-packager.cmd ./
- * npm i --save-dev electron-wix-msi
- * Install wix
- * Add wix to path
- * Create make-msi.js (xxxxxx)
+ * But there are packages (packages to do this)[https://github.com/electron-userland/electron-packager]: ```npm install -save-dev electron-packager```
+ * Create the packaged app: ```node_modules\.bin\electron-packager.cmd ./```
+ * :bulb: Review the created packaged app folder. Run the packaged app, note it no native menus.
+ * Install a package to [create an installer](https://github.com/felixrieseberg/electron-wix-msi): ```npm i --save-dev electron-wix-msi```
+ * Install [wix toolset](http://wixtoolset.org/)
+ * Add wix to the path  ```C:\Program Files (x86)\WiX Toolset v3.11\bin;```
+ * Create (make-msi.js)[make-msi.js] with script to create an insaller
+ * Build the installer: ```node make-msi.js```
