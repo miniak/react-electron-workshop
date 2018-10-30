@@ -1,9 +1,9 @@
 # react-electron-workshop
 
-This repo contains a react electron sample app that we used for a workshop on building react desktop apps with electron. It is a simple app to view photos stored locally on your computer. 
+This repo contains a react electron sample app that we used for a workshop on building react desktop apps with electron. It is a simple app to view photos stored locally on your computer. We use [typescript]( https://www.typescriptlang.org/) because things normally work out better that way.
 
 ## To Use
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this repository, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```
 # Clone this repository
@@ -20,25 +20,26 @@ npm start
 
 ## To develop
 
-For development we use [vscode](https://code.visualstudio.com/) [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/)
+For development we use [vscode](https://code.visualstudio.com/), [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [electron-fiddle](https://github.com/electron/fiddle).
 
  * create empty folder: ```mkdir react-photo-viewer``` 
  * go into the folder: ```cd react-photo-viewer``` 
- * npm init
- * npm install --save electron 
- * npm install --save react react-dom
- * npm install --save-dev typescript @types/react @types/react-dom 
- * Create git ignore (optional) (XXXXXXXXXX)
- * Create tsconfig.json  (XXXXX)
- * Create src folder
- * Create renderer folder
- * Create main.ts (XXXXX)
- * Create Preload (xxxx)
- * Create Index.html (xxxx)
- * CreateIndex.tsx (xxxx) hello world version
- * Add build steps to pkg.json + update main  "main": "src/main.js",
- * Command line: npm run build
- * Command line: npm start
+ * Initialize npm: ```npm init```
+ * Install electron: ```npm install --save-dev electron```
+ * Install react: ```npm install --save react react-dom```
+ * Install typescript: ```npm install --save-dev typescript @types/react @types/react-dom```
+ * Create [.gitignore](.gitignore) (optional) 
+ * Create [tsconfig.json](tsconfig.json)
+ * Create src folder: '''mkdir src''' 
+ * Create renderer folder: '''mkdir src/renderer''' 
+ * In the src\renderer folder
+ * Create (main.ts)[src/renderer/main.ts]
+ * Create (preload.ts)[src/renderer/preload.ts]
+ * Create (index.html)[src/renderer/index.html]
+ * Create (index.tsx)[src/renderer/index.tsx] (hello world version)
+ * Add build steps to: (package.json)[package.json] and update main '''"main": "src/main.js",'''
+ * Try to build: '''npm run build'''
+ * Try to run: '''npm start'''
  * Talk about rp debugging
  * Talk about chrome://inspect  blah
  * Upgrade index.html to basic viewer (xxxx)
