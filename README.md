@@ -37,10 +37,10 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Create src folder: ```mkdir src```
  * Create renderer folder: ```mkdir src/renderer```
  * In the src\renderer folder
- * Create [main.ts](src/renderer/main.ts)
+ * Create [main.ts](src/main.ts)
  * Create [preload.ts](src/renderer/preload.ts)
  * Create [index.html](src/renderer/index.html)
- * Create [index.tsx](src/renderer/index.tsx) (hello world version)
+ * Create [index.tsx](https://github.com/miniak/react-electron-workshop/blob/1314f9d2a09ebeded0040b1b8a23e9e083e04235/src/renderer/index.tsx) (hello world version)
  * Add build steps to: [package.json](package.json) and update main ```"main": "src/main.js",```
  * Try to build: ```npm run build```
  * Try to run: ```npm start```
@@ -49,12 +49,22 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  
  ### Add photo viewing features
  
- * Upgrade [index.tsx](src/renderer/index.tsx) with basic viewer
+ * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/9876e93bbf3aa0185d3ab6933ea6028fa04a710b/src/renderer/index.tsx) with basic viewer ([diff](https://github.com/miniak/react-electron-workshop/commit/9876e93bbf3aa0185d3ab6933ea6028fa04a710b))
  * Add [index.css](src/renderer/index.css) for styles
  * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's
- * Install exif module ```npm install --save exif```
+ 
+ ### Directory selection
+ * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/4dd866f7850236b8881abbc998fda1f6fd0f1965/src/renderer/index.tsx) with context menu and thumbnail optimizing ([diff](https://github.com/miniak/react-electron-workshop/commit/4dd866f7850236b8881abbc998fda1f6fd0f1965))
+ 
+ ### Add context menu 
  * Upgrade [index.tsx](src/renderer/index.tsx) with context menu and thumbnail optimizing
  * :bulb: Note the use of ```remote.Menu.buildFromTemplate``` electron menu api.
+ 
+ ### Add exif info
+ * Install exif module ```npm install --save exif```
+ * Add [popup.html](src/renderer/popup.html) and [popup.tsx](src/renderer/popup.tsx) to display exif info
+ * Upgrade [index.tsx](src/renderer/index.tsx) to show exif info ([diff](https://github.com/miniak/react-electron-workshop/commit/19c95f489060a2bd689f55221158620a72094a82))
+ * :bulb: notice an aditional rendering process when the exif popup is visible
  
 ### Packaging the app
  * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
