@@ -51,7 +51,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  ### Add photo viewing features
  
  * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/9876e93bbf3aa0185d3ab6933ea6028fa04a710b/src/renderer/index.tsx) with basic viewer ([diff](https://github.com/miniak/react-electron-workshop/commit/9876e93bbf3aa0185d3ab6933ea6028fa04a710b))
-  * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's
+  * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's. This API is only available in the main process – so we access it via [remote](https://github.com/electron/electron/blob/master/docs/api/remote.md).
  
  ### Directory selection
  * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/4dd866f7850236b8881abbc998fda1f6fd0f1965/src/renderer/index.tsx) with context menu and thumbnail optimizing ([diff](https://github.com/miniak/react-electron-workshop/commit/4dd866f7850236b8881abbc998fda1f6fd0f1965))
@@ -86,3 +86,4 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  ### Tips
   * Read the [security guide](https://electronjs.org/docs/tutorial/security) **IMPORTANT**
   * We didn't cover [Native Node Modules](https://electronjs.org/docs/tutorial/using-native-node-modules). They provide full access to the native platform – for when electron does not have an api.
+  * Electron processes communicate using [IPC](https://electronjs.org/docs/api/ipc-main). It is good to understand potential performance implications.
