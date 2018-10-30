@@ -41,6 +41,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Create [preload.ts](src/renderer/preload.ts)
  * Create [index.html](src/renderer/index.html)
  * Create [index.tsx](https://github.com/miniak/react-electron-workshop/blob/1314f9d2a09ebeded0040b1b8a23e9e083e04235/src/renderer/index.tsx) (hello world version)
+ * Add [index.css](src/renderer/index.css) for styles
  * Add build steps to: [package.json](package.json) and update main ```"main": "src/main.js",```
  * Try to build: ```npm run build```
  * Try to run: ```npm start```
@@ -50,25 +51,27 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  ### Add photo viewing features
  
  * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/9876e93bbf3aa0185d3ab6933ea6028fa04a710b/src/renderer/index.tsx) with basic viewer ([diff](https://github.com/miniak/react-electron-workshop/commit/9876e93bbf3aa0185d3ab6933ea6028fa04a710b))
- * Add [index.css](src/renderer/index.css) for styles
- * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's
+  * :bulb: Note the use of ```remote.app.getPath('pictures')``` and ```fs.readdirSync``` electron api's
  
  ### Directory selection
  * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/4dd866f7850236b8881abbc998fda1f6fd0f1965/src/renderer/index.tsx) with context menu and thumbnail optimizing ([diff](https://github.com/miniak/react-electron-workshop/commit/4dd866f7850236b8881abbc998fda1f6fd0f1965))
+ * :runner: build and run: ```npm run build && npm start```
  
  ### Add context menu 
- * Upgrade [index.tsx](src/renderer/index.tsx) with context menu and thumbnail optimizing
+ * Upgrade [index.tsx](https://github.com/miniak/react-electron-workshop/blob/b3063bf1b1c00cc9fe31e773bf24a27e2d53324d/src/renderer/index.tsx) with context menu and thumbnail optimizing ([diff](https://github.com/miniak/react-electron-workshop/commit/b3063bf1b1c00cc9fe31e773bf24a27e2d53324d))
  * :bulb: Note the use of ```remote.Menu.buildFromTemplate``` electron menu api.
+ * :runner: build and run: ```npm run build && npm start```
  
  ### Add exif info
  * Install exif module ```npm install --save exif```
  * Add [popup.html](src/renderer/popup.html) and [popup.tsx](src/renderer/popup.tsx) to display exif info
  * Upgrade [index.tsx](src/renderer/index.tsx) to show exif info ([diff](https://github.com/miniak/react-electron-workshop/commit/19c95f489060a2bd689f55221158620a72094a82))
- * :bulb: notice an aditional rendering process when the exif popup is visible
+ * :runner: build and run: ```npm run build && npm start```
+ * :bulb: notice an additional rendering process when the exif popup is visible
  
 ### Packaging the app
  * An app package can be made by just [copying folders](https://electronjs.org/docs/tutorial/application-distribution)
- * But there are packages [packages to do this](https://github.com/electron-userland/electron-packager): ```npm install -save-dev electron-packager```
+ * But there are packages [packages to do this](https://github.com/electron-userland/electron-packager): ```npm install --save-dev electron-packager```
  * Create the packaged app: ```node_modules\.bin\electron-packager.cmd ./```
  * :bulb: Review the created packaged app folder. Run the packaged app, note it no native menus.
  
