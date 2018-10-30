@@ -2,7 +2,7 @@
 
 This repo contains a [react](https://reactjs.org/) [electron](https://electronjs.org/) sample app that we used for a workshop on building react desktop apps with electron. It is a simple app to view photos stored locally on your computer. We use [typescript]( https://www.typescriptlang.org/) because things normally work out better that way.
 
-![Screenshot](images/screenshot.jpg)
+![Screenshot](elctron-photo-viewer.jpg)
 
 ## To Use
 To clone and run this repository, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
