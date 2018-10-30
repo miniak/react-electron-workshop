@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "sourceRoot": "./src",
+        "sourceMap": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "alwaysStrict": true
+    }
+}

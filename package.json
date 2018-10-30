@@ -1,0 +1,20 @@
+{
+  "name": "react-electron-workshop",
+  "version": "0.0.0",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "electron": "^3.0.6",
+    "typescript": "^3.1.4"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
