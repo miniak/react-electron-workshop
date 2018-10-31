@@ -32,7 +32,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Install electron: ```npm install --save-dev electron```
  * Install react: ```npm install --save react react-dom```
  * Install typescript: ```npm install --save-dev typescript @types/react @types/react-dom```
- * Create [.gitignore](.gitignore) (optional) 
+ * Create [.gitignore](.gitignore) ```git init``` (optional) 
  * Create [tsconfig.json](tsconfig.json)
  * Create src folder: ```mkdir src```
  * Create renderer folder: ```mkdir src/renderer```
@@ -79,7 +79,7 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Install a package to [create an installer](https://github.com/felixrieseberg/electron-wix-msi): ```npm i --save-dev electron-wix-msi```
  * Install [wix toolset](http://wixtoolset.org/)
  * Add wix to the path  ```C:\Program Files (x86)\WiX Toolset v3.11\bin;```
- * Create (make-msi.js)[make-msi.js] with script to create an insaller
+ * Create [make-msi.js](make-msi.js) with script to create an insaller
  * Build the installer: ```node make-msi.js```
  * :bulb: Install and run
  
