@@ -35,14 +35,14 @@ For development we use [vscode](https://code.visualstudio.com/), [Git](https://g
  * Create [.gitignore](.gitignore) ```git init``` (optional) 
  * Create [tsconfig.json](tsconfig.json)
  * Create src folder: ```mkdir src```
+ * In the src folder: Create [main.ts](src/main.ts)
  * Create renderer folder: ```mkdir src/renderer```
- * In the src\renderer folder
- * Create [main.ts](src/main.ts)
- * Create [preload.ts](src/renderer/preload.ts)
- * Create [index.html](src/renderer/index.html)
- * Create [index.tsx](https://github.com/miniak/react-electron-workshop/blob/1314f9d2a09ebeded0040b1b8a23e9e083e04235/src/renderer/index.tsx) (hello world version)
- * Add [index.css](src/renderer/index.css) for styles
- * Add build steps to: [package.json](package.json) and update main ```"main": "src/main.js",```
+ * In the src\renderer folder:
+    * Add [preload.ts](src/renderer/preload.ts)
+    * Add [index.html](src/renderer/index.html)
+    * Add [index.tsx](https://github.com/miniak/react-electron-workshop/blob/1314f9d2a09ebeded0040b1b8a23e9e083e04235/src/renderer/index.tsx) (hello world version)
+    * Add [index.css](src/renderer/index.css) for styles
+ * Edit [package.json](package.json) to add build steps and update main ```"main": "src/main.js",```
  * Try to build: ```npm run build```
  * Try to run: ```npm start```
  * :bulb: Try to inspect and debug the render process using developer-tools: <kbd>control</kbd>+<kbd>shift</kbd>+<kbd>I</kbd>
